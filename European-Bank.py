@@ -82,14 +82,22 @@ from pathlib import Path
 
 @st.cache_data
 def load_data():
-    file_path = Path("/Users/vardaraj/Downloads/European_Bank.csv")
 
-    if not file_path.exists():
-        raise FileNotFoundError(
-            f"Could not find: {file_path}"
+    file_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "European_Bank.csv"
+    )
+
+    if not os.path.exists(file_path):
+        st.error(
+            "Dataset not found. Please make sure "
+            "'European_Bank.csv' is uploaded to the same GitHub folder "
+            "as 'European-Bank.py'."
         )
+        st.stop()
 
     df = pd.read_csv(file_path)
+
     df_model = df.copy()
 
     return df, df_model
