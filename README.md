@@ -2,7 +2,7 @@
 
 ## 🚀 Live Streamlit App
 
-👉 **[Open the Live Streamlit Application]()**
+👉 **[Open the Live Streamlit Application](https://european-bank-churn-predictions.streamlit.app/)**
 
 ---
 
